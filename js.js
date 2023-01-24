@@ -1,4 +1,4 @@
-let score = 5;
+let score = 7;
 let attempts = 0;
 let attempt = document.querySelector('.attempt');
 let scoreText = document.querySelector('.times');
@@ -12,7 +12,7 @@ let windows = document.querySelector('.hidden');
 let main = document.querySelector('main');
 let win = document.querySelector('.win');
 console.log(random);
-
+scoreText.textContent = `Score: ${score}`;
 
 function a() {
     score--;
@@ -37,7 +37,7 @@ function a() {
     }else if(InpValue.value < random){
         attempt.textContent = `Attempt: ${attempts}!`;
         win.textContent = `You LOSE!`;
-        arrow.textContent = `BIGGER`;
+        arrow.textContent = `the number is greater `;
         GuessText.textContent = `${InpValue.value}`;
         console.log(InpValue.value);
     }else if(InpValue.value > random){
@@ -49,7 +49,7 @@ function a() {
     }
 };
 function backGame(){
-    arrow.textContent = `Bigger or Less`;
+    arrow.textContent = `greater or Less`;
     random = Math.floor(Math.random() * 20);
     console.log(random);
     GuessText.textContent="0";
@@ -58,6 +58,7 @@ function backGame(){
     main.style.filter = "blur(0px)";
     scoreText.textContent = `Score: ${score}`;
 };
+
 
 btn.addEventListener('click', a);
 
